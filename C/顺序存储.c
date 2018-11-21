@@ -102,7 +102,7 @@ int main()
 {
     SqList L;
     ElemType e;
-    Status i;
+    Status i=0;
     int j;
     
     L.length = 0;

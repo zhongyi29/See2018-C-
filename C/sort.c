@@ -14,14 +14,14 @@
 #define FALSE 0
 #define MAXSIZE 10000
 
-typedef int Status;
+typedef int Status; //把Status定义为int类型。在后续程序中使用Status类型，便于后期修改Status的类型。
 typedef struct
 {
     int r[MAXSIZE+1];
     int length;
-}Sqlist;
+}SqList; //定义了一个结构体名字叫SqList。它包含两个属性，r【】和length ，都是intx类型。
 
-void swap(Sqlist *L,int i,int j)
+void swap(SqList *L,int i,int j)
 {
     int temp = L->r[i];
     L->r[i] = L->r[j];
@@ -29,7 +29,7 @@ void swap(Sqlist *L,int i,int j)
     
 }
 
-void print(Sqlist L)
+void print(SqList L)
 {
     int i;
     for (i=1;i<(L.length);i++)
@@ -38,14 +38,14 @@ void print(Sqlist L)
     printf("\n");
 }
 
-void Sort0 (Sqlist *);
-void Sort1 (Sqlist *);
-void Sort2 (Sqlist *);
-//void Sort3 (Sqlist *);
-//void Sort4 (Sqlist *);
-//void Sort5 (Sqlist *);
+void Sort0 (SqList *L);
+void Sort1 (SqList *L);
+void Sort2 (SqList *L);
+//void Sort3 (SqList *);
+//void Sort4 (SqList *);
+//void Sort5 (SqList *);
 
-void Sort0 (Sqlist *L)
+void Sort0 (SqList *L)
 {
     int i,j;
     for(i=1 ;i<L->length ;i++){
@@ -56,12 +56,12 @@ void Sort0 (Sqlist *L)
         }
 #ifdef OUTPUT_INTERMEDIATE_RESULT
         printf("\n第%d次排序后的结果:\n",i);
-        print( *L);
+        print(*L);
 #endif
     }
 }
 
-void Sort1 (Sqlist *L)
+void Sort1 (SqList *L)
 {
     int i,j;
     for(i=1;i<L->length;i++)
@@ -80,7 +80,7 @@ void Sort1 (Sqlist *L)
     }
 }
 
-void Sort2 (Sqlist *L)
+void Sort2 (SqList *L)
 {
     int i,j;
     Status flag=TRUE;
@@ -99,7 +99,7 @@ void Sort2 (Sqlist *L)
 }
 int main(){
     int i,j,N;
-    Sqlist list;
+    SqList list;
     
     while (1)
     {
